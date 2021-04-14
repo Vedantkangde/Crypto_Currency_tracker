@@ -8,6 +8,7 @@ import Video from '../../video/video.mp4'
 import {ServicesContainer,ServicesH1,ServicesWrapper,ServicesCard,ServicesIcon,ServicesH2,ServicesP,ServicesCardLink} from './ServiceElements'
 import {HeroBg,VideoBg,} from '../HeroSection/HeroElements'
 import { Route } from 'react-router'
+import {Link} from 'react-router-dom'
 
 const Services = () => {
     return (
@@ -31,11 +32,13 @@ const Services = () => {
                 </ServicesCard>
 
                 <ServicesCard >
+                    
                     <ServicesCardLink to="/Calender">
                     <ServicesIcon src={Icon3} />
                     <ServicesH2>Reduce expenses</ServicesH2>
                     <ServicesP>We help reduce your fess and increase your overall revenue</ServicesP>
                     </ServicesCardLink>
+                    
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>
