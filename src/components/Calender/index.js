@@ -6,7 +6,9 @@ import Calendar from 'react-calendar';
 import {date} from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import {createSun} from 'astronomy-bundle/sun';
+import {createMars} from 'astronomy-bundle/planets';
 import {CalendarContainer,CalenderSize} from './CalenderElements';
+import Planets from './planets';
 
 const MyCalender = () => {
   
@@ -29,13 +31,21 @@ const MyCalender = () => {
     
     var times = SunCalc.getTimes(currentdate, 19.076090,72.877426);
     var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes()+ ':' +times.sunrise.getSeconds();
-    var sunriseendStr = times.sunriseEnd.getHours() + ':' + times.sunriseEnd.getMinutes()+ ':' +times.sunriseEnd.getSeconds();
+    var sunset = times.sunset.getHours() + ':' + times.sunset.getMinutes()+ ':' +times.sunset.getSeconds();
      var moon = SunCalc.getMoonIllumination(currentdate);
      var getMoonIllumination = moon.phase;
+     var getMoonPhase = moon.fraction;
     // library
 
-    var moon= SunCalc.getMoonTimes(currentdate, 19.076090,72.877426)
-   
+    var moons= SunCalc.getMoonTimes(currentdate, 19.076090,72.877426);
+    var moonrise = moons.rise.getHours() + ':' + moons.rise.getMinutes() + ':' +moons.rise.getSeconds();
+    var moonset = moon.set
+    const mars = createMars(toi);
+
+    const k =   mars.getIlluminatedFraction();
+    const a =k.fraction;
+    const isWaxing =  mars.isWaxing();
+
   // calendar
 
     return (
@@ -45,7 +55,8 @@ const MyCalender = () => {
         <div>
         <h1>Events Calender</h1>
      
-              <Calendar
+         
+        <Calendar
           onChange={onDateChange}
           value={currentdate}
           showNeighboringMonth={false}
@@ -53,15 +64,16 @@ const MyCalender = () => {
           hover={currentdate}
           
         />
-         
-         
          <h1>{exists}</h1>
-         <h1>{sunriseStr.toString()}</h1>
-         <h1>{sunriseendStr.toString()}</h1>
+         <h1>{sunriseStr.toString()}AM</h1>
+         <h1>{sunset.toString()}PM</h1>
          <h1>{currentdate.getDate().toString()}</h1>
          <h1>{getMoonIllumination.toString()}</h1>
-         <h1>{moon.rise.toString()}</h1>
+         <h1>{getMoonPhase}</h1>
+         <h1>{moonrise.toString()}PM</h1>
          
+         
+        
         </div>
         </CalendarContainer>
         </>

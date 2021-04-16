@@ -6,7 +6,7 @@ const SolarSystem = () => {
     return (
         <>
             <h1>Solar system Simulator</h1>
-            <Solar/>
+          
             
         </>
     );

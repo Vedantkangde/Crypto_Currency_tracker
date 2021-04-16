@@ -4,6 +4,7 @@ import { SolarLink } from './SolarSystemElements';
 
 
 
+
 const Solar = () => {
     
     return(
