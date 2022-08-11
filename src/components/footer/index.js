@@ -2,7 +2,12 @@ import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter,FaYoutube } from 'react-icons/fa'
 import {FooterContainer,FooterWrap,FooterLinksContainer,FooterLinksWrapper,FooterLinkItems,FooterLinkTitle,FooterLink,SocialMedia,
 SocialMediaWrap,SocialLogo,WebsiteRights,SocialIconLink,SocialIcons} from './FooterElements'
+import {animateScroll as scroll} from 'react-scroll'
 const Footer = () => {
+    const toggleHome = () => {
+
+        scroll.scrollToTop();
+       }
     return (
         <FooterContainer>
             <FooterWrap>
@@ -48,7 +53,7 @@ const Footer = () => {
                 </FooterLinksContainer>
                 <SocialMedia>
                     <SocialMediaWrap>
-                        <SocialLogo to="/">Solar System Simulator</SocialLogo>
+                        <SocialLogo to="/" onClick={toggleHome}>Solar System Simulator</SocialLogo>
                         <WebsiteRights>Solar System Simulator {new Date().getFullYear} All rights reserved</WebsiteRights>
                         <SocialIcons>
 

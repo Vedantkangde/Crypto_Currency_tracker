@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import {HeroContainer,HeroBg,VideoBg,HeroContent,HeroH1,HeroP,HeroBtnWrapper,ArrowRight,Arrowforward,HeroButtonLink} from './HeroElements'
 import {Button} from '../ButtonElements'
 import {Link} from 'react-router-dom';
-const HeroSection = () => {
+const HeroSection = ({isSignedIn}) => {
 
     const [hover,setHover] = useState(false)
 
@@ -13,6 +13,11 @@ const HeroSection = () => {
 
         setHover(!hover)
     }
+
+    function signin() {
+        alert('Login first');
+      }
+      
 
     return (
         <HeroContainer id='home'>
@@ -25,9 +30,20 @@ const HeroSection = () => {
                     Explore the simulator!
                 </HeroP>
                 <HeroBtnWrapper>
-                        <HeroButtonLink>
-                    <Button to="/Solar" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark ="true">Explore {hover ? <Arrowforward/> :<ArrowRight/>}</Button>
+                    {isSignedIn ? (
+                
+                <HeroButtonLink>
+                <Button to="/Solar" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark ="true" >Explore {hover ? <Arrowforward/> :<ArrowRight/>}</Button>
+                </HeroButtonLink>
+
+                    ):(
+                    <HeroButtonLink>
+                    <Button to="/" onMouseEnter={onHover} onMouseLeave={onHover} primary="true" dark ="true" onClick={signin}>Explore {hover ? <Arrowforward/> :<ArrowRight/>}</Button>
                     </HeroButtonLink>
+                    )
+                    
+                }
+                       
                 </HeroBtnWrapper>
             </HeroContent>
         </HeroContainer>

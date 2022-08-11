@@ -1,9 +1,13 @@
 import styled from 'styled-components'
+import {Link as LinkR} from 'react-router-dom'
 
 export const InfoContainer = styled.div`
 
 color:white;
-background:${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
+padding-top:50px;
+background:#010606;
+padding-bottom:50px;
+
 
 
 @media screen and (max-width:768px){
@@ -17,13 +21,18 @@ export const InfoWrapper = styled.div `
 
 display:grid;
 z-index:1;
-height:860px;   
-width:100%;
+height:530px;   
+width:50%;
 max-width:1100px;
 margin-right:auto;
 margin-left:auto;
 padding:0 24px;
 justify-content:center;
+background-color:black;
+border:1px solid;
+border-color:#01bf71;
+border-radius:20px;
+padding-top:30px;
 `;
 
 export const InfoRow = styled.div `
@@ -39,14 +48,15 @@ grid-template-areas :${({imgStart}) => (imgStart ? `'col2 col1'`: `'col1 col2'`)
 `
 
 export const Column1 = styled.div `
-margin-bottom:15px;
+
 padding: 0 15px;
 grid-area:col1;
 
 
+
 `
 export const Column2 = styled.div `
-margin-bottom:15px;
+//margin-bottom:15px;
 padding: 0 15px;
 grid-area:col2;
 
@@ -59,7 +69,7 @@ line-height:16px;
 font-weight:700;
 letter-spacing:1.4px;
 text-transform:uppercase;
-margin-bottom:16px;
+//margin-bottom:16px;
 
 
 `
@@ -94,7 +104,10 @@ font-size:18px;
 line-height:24px;
 color:${({darkText}) => (darkText ? '#010606': '#ffffff')};
 
+`
+export const BtnLink = styled(LinkR) `
 
+text-decoration:none;
 `
 
 export const BtnWrap = styled.div `
@@ -114,5 +127,5 @@ export const Img = styled.img `
 width:100%;
 margin:0 0 10px 0;
 padding-right:0;
-src:"../../images/undraw_Create_re_57a3.png"
+
 `

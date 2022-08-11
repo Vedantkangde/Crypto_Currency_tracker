@@ -1,10 +1,14 @@
-import React from 'react'
+import React ,{useState ,useEffect} from 'react'
+import SignIn from '../components/Signin'
+import fire from '../components/login system/firebase'
 
-const SigninPage = () => {
+const SigninPage = (props) => {
+
+   
     return (
-        <div>
-            <h1>sign-in</h1>
-        </div>
+        <>
+           <SignIn />
+        </>
     )
 }
 

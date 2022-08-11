@@ -42,8 +42,6 @@ align-items:center;
 margin-left:24px;
 font-weight:bold;
 text-decoration:none;
-
-
 `;
 export const MobileIcon = styled.div`
 display:none;
@@ -95,38 +93,52 @@ cursor:pointer;
     border-bottom:3px solid #01bf71;
 }
 
+
 `;
+
+
 
 export const NavBtn = styled.nav `
 
 display:flex;
 align-items:center;
-
-@media screen and (max-width:768px){
-
-    display: none;
-}
-`;
-
-export const NavBtnLink = styled(LinkR)`
-
-border-radius:50px;
+border-radius:15px;
 background:#01bf71;
 white-space:nowrap;
-padding:10px 22px;
+padding:5px 10px;
 color:#010606;
 font-size:16px;
 outline:none;
 border:none;
+;
+@media screen and (max-width:768px){
+
+    display: none;
+    back
+}
+&:hover{
+
+    transition:all 0.2s ease-in-out;
+    background-color:white;
+    color:#010606;
+
+
+}
+`;
+
+export const NavBtnLink = styled.div`
+
+
 cursor:pointer;
 transition:all 0.2s ease-in-out;
 text-decoration:none;
+padding-top:25px;
 
 
 &:hover{
 
     transition:all 0.2s ease-in-out;
-    background:white;
+   
     color:#010606;
 
 

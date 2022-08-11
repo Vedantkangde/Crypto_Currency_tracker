@@ -10,6 +10,7 @@ justify-content:center;
 align-items:center;
 background:#010606;
 
+
 @media screen and(max-width:768px){
 
     height:1100px;
@@ -30,6 +31,7 @@ grid-template-columns:1fr 1fr 1fr;
 align-items:center;
 grid-gap:16px;
 padding:0 50px;
+background-color:#010606;
 
 @media screen and (max-width:1000px){
 
@@ -44,7 +46,7 @@ padding:0 20px;
 }
 `
 export const ServicesCard = styled.div `
-background:white;
+//background:#00985a;
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
@@ -55,6 +57,10 @@ padding:30px;
 box-shadow:0 1px 3px rgba(0,0,0,0.2);
 transition:all 0.2s ease-in-out;
 text-decoration:none;
+background-color:black;
+border:1px solid;
+border-color:#01bf71;
+
 
 
 &:hover{
@@ -71,14 +77,16 @@ text-decoration:none;
 export const ServicesCardLink = styled(LinkR) `
 
 text-decoration:none;
+color:#00985a;
 `
 
 
 export const ServicesIcon = styled.img `
 
 height:160px;
-width:160px;
+width:230px;
 margin-bottom:10px;
+border-radius:10px;
 
 `
 

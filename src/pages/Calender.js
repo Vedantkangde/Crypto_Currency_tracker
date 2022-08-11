@@ -1,5 +1,10 @@
 import React,{useState} from 'react';
+import Asteroid from '../components/Asteroids';
 import MyCalender from '../components/Calender'
+import Navbar from '../components/Calender/Navbarcalendar';
+import Footer from '../components/footer/index'
+
+
 
 
 const Calender = () => {
@@ -10,7 +15,10 @@ const Calender = () => {
   
     return (
         <>
-         <MyCalender/>
+        <Navbar/>
+        {/* <Asteroid/> */}
+        <MyCalender/>
+         <Footer/>
         </>
     );
 }
